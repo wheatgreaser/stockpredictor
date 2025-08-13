@@ -1,0 +1,125 @@
+body {
+  position: relative;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden; /* prevent scrollbars if needed */
+}
+
+body::before {
+  content: "";
+  position: fixed;   /* fixed so it stays in place during scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("wallstreetbets.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;       /* only the background image is translucent */
+  z-index: -1;        /* behind the content */
+}
+
+/* The rest of your styles stay the same */
+
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('./fonts/pixeldefault.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: MyFont, sans-serif;
+  color: snow;
+  font-size: clamp(1.8rem, 4vw, 3rem); /* responsive */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cool-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 20px;
+}
+
+.cool-list li {
+  background: green;
+  color: white;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-family: MyFont, sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.cool-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+.neon-btn {
+  display: block;
+  margin: 15px auto; /* centers horizontally */
+  background: red;
+  color: white;
+  font-family: MyFont, sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 15px;
+  box-sizing: border-box;
+  
+  
+}
+
+
+.neon-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.6);
+}
+
+.neon-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+}
+
+/* 📱 Mobile-friendly tweaks */
+@media (max-width: 480px) {
+  .cool-list {
+    max-width: 90%;
+  }
+  .cool-list li {
+    padding: 10px;
+  }
+  .neon-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 8px 16px;
+    white-space: normal;
+  }
+}
+
+.prediction-result{
+  color: white;
+  font-family: MyFont;
+}
